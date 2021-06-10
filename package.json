@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/mauriyapura/node-06-restserver#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "morgan": "^1.10.0",

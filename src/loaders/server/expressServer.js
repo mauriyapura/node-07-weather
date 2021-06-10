@@ -11,7 +11,8 @@ class ExpressServer {
     constructor(){
         this.app = express()
         this.port = config.port;
-        this.basePathUser = `${config.api.prefix}/users`;
+        this.basePathWeather = `${config.api.prefix}/weather`;
+        this.basePathCities = `${config.api.prefix}/cities`;
         
         this._middlewares();
         this._swaggerConfig();
@@ -35,7 +36,8 @@ class ExpressServer {
             res.status(200).end();
         });
 
-        this.app.use(this.basePathUser, require("../../routes/users"));
+        this.app.use(this.basePathWeather, require("../../routes/weather"));
+        this.app.use(this.basePathCities, require("../../routes/cities"));
     }
 
     _notFound(){
