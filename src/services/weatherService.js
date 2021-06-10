@@ -15,7 +15,7 @@ const weatherByCoordinatesService = async(lon, lat)=>{
     //logger.silly(JSON.stringify(weather));
 
     return {
-        name: weather.name,
+        //name: weather.name,
         description: weather.weather[0].description,
         temperature: weather.main.temp,
         temperatureMin: weather.main.temp_min,
