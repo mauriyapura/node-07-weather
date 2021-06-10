@@ -11,10 +11,8 @@ class  CityRepository {
         this.apiKey = config.mapbox.apikey;
     }
 
-    async findCities(city){     
-        
-        throw new Error("Error de prueba");
-       
+    async findCities(city){         
+               
         try {
             const instance = axios.create({
                 baseURL: `${this.pathBase}${city}.json`,
