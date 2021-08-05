@@ -11,7 +11,7 @@ const cityRepo = new cityRepository();
 const weatherByCoordinatesService = async(lon, lat)=>{
 
     const weather = await weatherRepo.weatherByCoordinates(lon, lat);
-
+    console.log(weather)
     //logger.silly(JSON.stringify(weather));
 
     return {
@@ -20,24 +20,18 @@ const weatherByCoordinatesService = async(lon, lat)=>{
         temperature: weather.main.temp,
         temperatureMin: weather.main.temp_min,
         temperatureMax: weather.main.temp_max
-    }
-       
+    }       
 }
 
 
 const weatherByCityIdService = async (city, id) => {
     const cities = await cityRepo.findCities(city);
-
+    //console.log(cities)
     const cityData = cities.features.find(e => e.id === id);
     const lon = cityData.geometry.coordinates[0];
     const lat = cityData.geometry.coordinates[1];
     return await weatherByCoordinatesService(lon, lat);
-
-
-
 }
-
-
 
 module.exports = {
     weatherByCoordinatesService,

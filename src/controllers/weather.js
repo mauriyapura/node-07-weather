@@ -28,6 +28,7 @@ const weatherByCityId = async (req, res, next)=> {
 
     try {
         //const {city, id} = req.params;
+        //console.log(req.params);
         const id = req.params.id;
         const city = req.params.city;
         const weather = await weatherByCityIdService(city, id);
