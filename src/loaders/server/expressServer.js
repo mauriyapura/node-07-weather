@@ -29,7 +29,7 @@ class ExpressServer {
     _middlewares(){ //Funcion privada
         this.app.use(express.json());
         this.app.use(morgan("tiny"));
-        this.app.use(cors);
+        this.app.use(cors());
     }
 
     _routes(){
